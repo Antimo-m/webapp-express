@@ -6,7 +6,7 @@ export const index = (req,res) => {
         if(err) {
         return res.status(500).json({message: "Errore interno, riprova tra poco..."})
         }res.json({
-            result :result
+            Film  :result
         })
     })
 }
@@ -23,7 +23,7 @@ export const show = (req, res) => {
           return  res.status(404).json({error:"film non trovato"})
         }
         const movies = result[0]
-        
+
         const review = `SELECT * FROM reviews WHERE reviews.movie_id = ?`
         connection.query(review, [id], (err, resultReview) => {
             if (err) {

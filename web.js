@@ -6,7 +6,7 @@ const connection = mysql2.createConnection({
     password :process.env.DB_PASSWORD,
     database: process.env.DB_NAME 
 })
-console.log(process.env.DB_USER)
+
 
 connection.connect((err) => {
     if (err) {

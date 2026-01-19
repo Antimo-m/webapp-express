@@ -1,8 +1,10 @@
 import express from "express"
-import index from "../Controller/controller.js"
+import {index, show}from "../Controller/controller.js"
 
 const router = express.Router();
 
 router.get("/", index)
+
+router.get("/:id", show)
 
 export default router
